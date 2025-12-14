@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "c3622eef-6a40-4d39-ba12-d62a0ef23780",
+		"name": "OLX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18997694"
+	},
+	"item": [
+		{
+			"name": "Create Ad Missing required",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Fv74Zu5N5D6KzgePFFbQkHN5xdDy8nfEDvPzlnpTb7e528d6",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Title test\",\r\n    \"description\": \"Description test \",\r\n    \"price\": \"50\",\r\n    \"category_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/olx/olx-test/public/api/v1/ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"olx",
+						"olx-test",
+						"public",
+						"api",
+						"v1",
+						"ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ad min-max validation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Fv74Zu5N5D6KzgePFFbQkHN5xdDy8nfEDvPzlnpTb7e528d6",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Title test\",\r\n    \"description\": \"Description test \",\r\n    \"price\": 56465654564654,\r\n    \"category_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/olx/olx-test/public/api/v1/ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"olx",
+						"olx-test",
+						"public",
+						"api",
+						"v1",
+						"ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ad negative validation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Fv74Zu5N5D6KzgePFFbQkHN5xdDy8nfEDvPzlnpTb7e528d6",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Title test\",\r\n    \"description\": \"Description test \",\r\n    \"price\": -25,\r\n    \"category_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/olx/olx-test/public/api/v1/ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"olx",
+						"olx-test",
+						"public",
+						"api",
+						"v1",
+						"ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ad Missing wrong option",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Fv74Zu5N5D6KzgePFFbQkHN5xdDy8nfEDvPzlnpTb7e528d6",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Title test\",\r\n    \"description\": \"Description test \",\r\n    \"price\": 150,\r\n    \"category_id\": 1,\r\n    \"price_type\" : \"Nour\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/olx/olx-test/public/api/v1/ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"olx",
+						"olx-test",
+						"public",
+						"api",
+						"v1",
+						"ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ad success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Fv74Zu5N5D6KzgePFFbQkHN5xdDy8nfEDvPzlnpTb7e528d6",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Title test\",\r\n    \"description\": \"Description test \",\r\n    \"price\": 150,\r\n    \"category_id\": 1,\r\n    \"price_type\" : \"arranged\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/olx/olx-test/public/api/v1/ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"olx",
+						"olx-test",
+						"public",
+						"api",
+						"v1",
+						"ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My Ads",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Fv74Zu5N5D6KzgePFFbQkHN5xdDy8nfEDvPzlnpTb7e528d6",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/olx/olx-test/public/api/v1/my-ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"olx",
+						"olx-test",
+						"public",
+						"api",
+						"v1",
+						"my-ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Ad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Fv74Zu5N5D6KzgePFFbQkHN5xdDy8nfEDvPzlnpTb7e528d6",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/olx/olx-test/public/api/v1/ads/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"olx",
+						"olx-test",
+						"public",
+						"api",
+						"v1",
+						"ads",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
